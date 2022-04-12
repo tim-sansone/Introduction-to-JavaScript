@@ -193,11 +193,54 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
+let randNum = Math.floor((Math.random()*3) + 1);
+let compChoice = '';
+if (randNum === 1) {
+  compChoice = 'rock';
+} else if (randNum === 2) {
+  compChoice = 'paper';
+} else if (randNum === 3) {
+  compChoice = 'scissors'
+}
+let playerChoice = 'rock';
+console.log(compChoice);
 
 function game(user, computer){
-  /*add your code here*/
+  
+  if (user === 'rock') {
+    
+    if (computer ==='rock') {
+        return `it's a tie`;
+    } else if (computer === 'paper') {
+        return 'you lose!';
+    } else if (computer === 'scissors') {
+        return 'you win!';
+    }
+
+  } else if (user === 'paper') {
+      
+      if (computer ==='paper') {
+        return `it's a tie`;
+    } else if (computer === 'scissors') {
+        return 'you lose!';
+    } else if (computer === 'rock') {
+        return 'you win!';
+    }
+
+  } else if (user === 'scissors') {
+      
+    if (computer ==='scissors') {
+        return `it's a tie`;
+    } else if (computer === 'rock') {
+        return 'you lose!';
+    } else if (computer === 'paper') {
+        return 'you win!';
+    }
+  }
+
 }
 
+game(playerChoice, compChoice);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -211,9 +254,14 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+let milesInput = 75;
+
+function miles(kilometers){
+  let conversion = kilometers*0.621371;
+  return conversion; 
 }
+
+console.log(miles(milesInput));
 
 
 
@@ -225,8 +273,11 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+let cmInput = 500;
+
+function feet(centimeters){
+  let conversion = centimeters/30.48;
+  return conversion;
 }
 
 
@@ -244,10 +295,16 @@ Using the annoyingSong function below do the following:
 3. Outside of the function, Make a loop that invokes annoying song with a number that decreases until it gets to 1 bottle left. 
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
+let startNum = 5
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(num){
+  return `${num} bottles of soda on the wall, ${num} bottles of soda, take one down pass it around ${num - 1} bottles of soda on the wall`;
 }
+
+for (let i = startNum; i > 0; i--) {
+  console.log(annoyingSong(i));
+}
+
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
