@@ -354,10 +354,29 @@ HINT - you may need to study tomorrow's content on arrays
 HINT - try looking up the .includes() method
 */
 
+let input = 'I can put anything here I want';
+let inputLower = input.toLowerCase();
+console.log(inputLower);
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(words) {
+  let count = 0
+  for (let i = 0; i < words.length; i++) {
+    if (words[i] === 'a') {
+      count = count + 1
+    } else if (words[i] === 'e') {
+      count = count + 1
+    } else if (words[i] === 'i') {
+      count = count + 1
+    } else if (words[i] === 'o') {
+      count = count + 1
+    } else if (words[i] === 'u') {
+      count = count + 1
+    }
+  }
+  return count;
 }
+
+console.log(vowelCounter(inputLower));
 
 
 
